@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.810.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDotNet", "HelloDotNet\HelloDotNet.csproj", "{10D583F3-BCA9-4AB3-94E1-20DE71B4B585}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDotNet.Data", "HelloDotNet.Data\HelloDotNet.Data.csproj", "{91F16487-CD5C-4B67-A335-980B22CC2B95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDotNet.Application", "HelloDotNet.Application\HelloDotNet.Application.csproj", "{ABB3BF17-B31F-48A6-B445-873C0306B741}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{10D583F3-BCA9-4AB3-94E1-20DE71B4B585}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10D583F3-BCA9-4AB3-94E1-20DE71B4B585}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10D583F3-BCA9-4AB3-94E1-20DE71B4B585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F16487-CD5C-4B67-A335-980B22CC2B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F16487-CD5C-4B67-A335-980B22CC2B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F16487-CD5C-4B67-A335-980B22CC2B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F16487-CD5C-4B67-A335-980B22CC2B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB3BF17-B31F-48A6-B445-873C0306B741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB3BF17-B31F-48A6-B445-873C0306B741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB3BF17-B31F-48A6-B445-873C0306B741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB3BF17-B31F-48A6-B445-873C0306B741}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
