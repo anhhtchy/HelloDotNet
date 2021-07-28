@@ -1,6 +1,7 @@
 ﻿using System;
 using HelloDotNet.Data.Configurations;
 using HelloDotNet.Data.Entities;
+using HelloDotNet.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace HelloDotNet.Data.EntityFramework
@@ -17,6 +18,7 @@ namespace HelloDotNet.Data.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Configure using Fluent API
             modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
             modelBuilder.ApplyConfiguration(new CartConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
@@ -30,6 +32,10 @@ namespace HelloDotNet.Data.EntityFramework
             modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+
+            // Data seeding
+            modelBuilder.Seed();
+
             //base.OnModelCreating(modelBuilder);
         }
 
