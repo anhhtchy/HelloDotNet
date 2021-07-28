@@ -14,5 +14,7 @@ namespace HelloDotNet.Data.Entities
         public decimal Amount { get; set; }
         public decimal Fee { get; set; }
         public TransactionStatus Status { get; set; }
+        public Guid UserId { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }

@@ -13,5 +13,6 @@ namespace HelloDotNet.Data.Entities
         public string ShipEmail { get; set; }
         public string ShipPhoneNumber { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }

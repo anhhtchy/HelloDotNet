@@ -1,6 +1,7 @@
 ﻿using System;
 using HelloDotNet.Data.Entities;
 using HelloDotNet.Data.Enums;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace HelloDotNet.Data.Extensions
@@ -137,6 +138,41 @@ namespace HelloDotNet.Data.Extensions
                 {
                     ProductId = 1,
                     CategoryId = 1
+                }
+            );
+            var roleId = Guid.NewGuid();
+            modelBuilder.Entity<AppRole>().HasData(
+                new AppRole()
+                {
+                    Id = roleId,
+                    Name = "admin",
+                    NormalizedName = "admin",
+                    Description = "Administrator role"
+                }
+            );
+            var adminId = Guid.NewGuid();
+            var hasher = new PasswordHasher<AppUser>();
+            modelBuilder.Entity<AppUser>().HasData(
+                new AppUser()
+                {
+                    Id = adminId,
+                    UserName = "admin",
+                    NormalizedUserName = "admin",
+                    Email = "anhhtchy@gmail.com",
+                    NormalizedEmail = "anhhtchy@gmail.com",
+                    EmailConfirmed = true,
+                    PasswordHash = hasher.HashPassword(null, "AnhHT123!@#"),
+                    SecurityStamp = string.Empty,
+                    FirstName = "The-Anh",
+                    LastName = "Hoang",
+                    DateOfBirth = new DateTime(1999, 12, 19)
+                }
+            );
+            modelBuilder.Entity<IdentityUserRole<Guid>>().HasData(
+                new IdentityUserRole<Guid>()
+                {
+                    RoleId = roleId,
+                    UserId = adminId
                 }
             );
         }
