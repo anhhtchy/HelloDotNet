@@ -4,4 +4,24 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Catalog\" />
+    <None Remove="Catalog\Products\" />
+    <None Remove="Catalog\Products\DataTransferObjects\" />
+    <None Remove="DataTransferObjects\" />
+    <None Remove="Catalog\Products\DataTransferObjects\Manage\" />
+    <None Remove="Catalog\Products\DataTransferObjects\Public\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Catalog\" />
+    <Folder Include="Catalog\Products\" />
+    <Folder Include="Catalog\Products\DataTransferObjects\" />
+    <Folder Include="DataTransferObjects\" />
+    <Folder Include="Catalog\Products\DataTransferObjects\Manage\" />
+    <Folder Include="Catalog\Products\DataTransferObjects\Public\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloDotNet.Data\HelloDotNet.Data.csproj" />
+    <ProjectReference Include="..\HelloDotNet.Utilities\HelloDotNet.Utilities.csproj" />
+  </ItemGroup>
 </Project>
