@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using HelloDotNet.ViewModels.Catalog.Products;
-using HelloDotNet.ViewModels.Catalog.Products.Manage;
 using HelloDotNet.ViewModels.Common;
 using Microsoft.AspNetCore.Http;
 
@@ -21,6 +20,6 @@ namespace HelloDotNet.Application.Catalog.Products
         Task<int> UpdateImage(int imageId, string caption, bool isDefault);
         Task<List<ProductImageViewModel>> GetListImage(int productId);
         Task<PagedResult<ProductViewModel>> GetAllPaging(
-            GetProductPagingRequest request);
+            GetManageProductPagingRequest request);
     }
 }

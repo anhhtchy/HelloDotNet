@@ -9,7 +9,6 @@ using HelloDotNet.Data.Entities;
 using HelloDotNet.Data.EntityFramework;
 using HelloDotNet.Utilities.Exceptions;
 using HelloDotNet.ViewModels.Catalog.Products;
-using HelloDotNet.ViewModels.Catalog.Products.Manage;
 using HelloDotNet.ViewModels.Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
@@ -93,7 +92,9 @@ namespace HelloDotNet.Application.Catalog.Products
 
             if (product == null)
             {
-                throw new EShopException($"Cannot find product with id {productId}");
+                throw new EShopException(
+                    $"Cannot find product with id {productId}"
+                );
             }
 
             var images = _context.ProductImages.
@@ -108,7 +109,7 @@ namespace HelloDotNet.Application.Catalog.Products
         }
 
         public async Task<PagedResult<ProductViewModel>> GetAllPaging(
-            GetProductPagingRequest request)
+            GetManageProductPagingRequest request)
         {
             var query = from p in _context.Products
                         join pt in _context.ProductTranslations

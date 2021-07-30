@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 
-namespace HelloDotNet.ViewModels.Catalog.Products.Manage
+namespace HelloDotNet.ViewModels.Catalog.Products
 {
     public class ProductUpdateRequest
     {

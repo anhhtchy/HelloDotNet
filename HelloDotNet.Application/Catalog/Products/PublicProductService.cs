@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using HelloDotNet.Data.EntityFramework;
 using HelloDotNet.ViewModels.Catalog.Products;
-using HelloDotNet.ViewModels.Catalog.Products.Public;
 using HelloDotNet.ViewModels.Common;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +17,7 @@ namespace HelloDotNet.Application.Catalog.Products
         }
 
         public async Task<PagedResult<ProductViewModel>> GetAllByCategoryId(
-            GetProductPagingRequest request)
+            GetPublicProductPagingRequest request)
         {
             var query = from p in _context.Products
                         join pt in _context.ProductTranslations
