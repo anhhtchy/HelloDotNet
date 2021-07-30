@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDotNet.Data", "HelloDo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDotNet.Application", "HelloDotNet.Application\HelloDotNet.Application.csproj", "{ABB3BF17-B31F-48A6-B445-873C0306B741}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDotNet.Utilities", "HelloDotNet.Utilities\HelloDotNet.Utilities.csproj", "{DE1B254C-1DCF-4886-A706-30281A6FF0CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloDotNet.ViewModels", "HelloDotNet.ViewModels\HelloDotNet.ViewModels.csproj", "{B8C76323-EDFF-4A88-947A-27AC566653AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{ABB3BF17-B31F-48A6-B445-873C0306B741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB3BF17-B31F-48A6-B445-873C0306B741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB3BF17-B31F-48A6-B445-873C0306B741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1B254C-1DCF-4886-A706-30281A6FF0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1B254C-1DCF-4886-A706-30281A6FF0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1B254C-1DCF-4886-A706-30281A6FF0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1B254C-1DCF-4886-A706-30281A6FF0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C76323-EDFF-4A88-947A-27AC566653AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C76323-EDFF-4A88-947A-27AC566653AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C76323-EDFF-4A88-947A-27AC566653AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C76323-EDFF-4A88-947A-27AC566653AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

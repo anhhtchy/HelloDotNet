@@ -4,14 +4,16 @@ using HelloDotNet.Data.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HelloDotNet.Data.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    partial class EShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210729155859_AddProductImageTable")]
+    partial class AddProductImageTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,8 +78,8 @@ namespace HelloDotNet.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("964e0f3d-31c0-434d-8469-d8758ae38fcf"),
-                            ConcurrencyStamp = "f3208ac3-13b3-46d8-a083-cc3ec0ac8732",
+                            Id = new Guid("b3a64a07-6100-4865-9766-823ed5a2afa9"),
+                            ConcurrencyStamp = "ebaf0b6f-fe27-4720-bf78-4fdea168bd91",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -152,9 +154,9 @@ namespace HelloDotNet.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("52bc5c9a-95a2-4c8e-aae0-02e157be5800"),
+                            Id = new Guid("ddaa8c2d-5596-42d9-8b8f-4cefc474c39c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d14cf914-e8c6-4c80-ab08-5ac04c1d4ff7",
+                            ConcurrencyStamp = "cebdfa86-387d-4389-b070-7c8bf7ab048c",
                             DateOfBirth = new DateTime(1999, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "anhhtchy@gmail.com",
                             EmailConfirmed = true,
@@ -163,7 +165,7 @@ namespace HelloDotNet.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "anhhtchy@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAENWSd+pMH24u+FLRhcY8zRkgpqYZlHibLBIPbzhwosSDAdLw/mYbaHn1XY7fNMH5aw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFCWa0DkzbxXZnJ/JUPxMXjvlO/sLvbjOWtimIPO7i7YdMcpsiQ+UUXsr5c9wnbYRQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -496,7 +498,7 @@ namespace HelloDotNet.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2021, 7, 30, 23, 16, 53, 338, DateTimeKind.Local).AddTicks(6450),
+                            DateCreated = new DateTime(2021, 7, 29, 22, 58, 58, 255, DateTimeKind.Local).AddTicks(6490),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -518,8 +520,8 @@ namespace HelloDotNet.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<long>("FileSize")
-                        .HasColumnType("bigint");
+                    b.Property<decimal>("FileSize")
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("ImagePath")
                         .IsRequired()
@@ -794,8 +796,8 @@ namespace HelloDotNet.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("52bc5c9a-95a2-4c8e-aae0-02e157be5800"),
-                            RoleId = new Guid("964e0f3d-31c0-434d-8469-d8758ae38fcf")
+                            UserId = new Guid("ddaa8c2d-5596-42d9-8b8f-4cefc474c39c"),
+                            RoleId = new Guid("b3a64a07-6100-4865-9766-823ed5a2afa9")
                         });
                 });
 

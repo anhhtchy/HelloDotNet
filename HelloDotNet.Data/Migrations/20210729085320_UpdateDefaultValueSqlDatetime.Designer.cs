@@ -4,14 +4,16 @@ using HelloDotNet.Data.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HelloDotNet.Data.Migrations
 {
     [DbContext(typeof(EShopDbContext))]
-    partial class EShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210729085320_UpdateDefaultValueSqlDatetime")]
+    partial class UpdateDefaultValueSqlDatetime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,8 +78,8 @@ namespace HelloDotNet.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("964e0f3d-31c0-434d-8469-d8758ae38fcf"),
-                            ConcurrencyStamp = "f3208ac3-13b3-46d8-a083-cc3ec0ac8732",
+                            Id = new Guid("ef8f6404-3489-4b30-8032-0a3e0407e96b"),
+                            ConcurrencyStamp = "63fb337b-815d-4f67-a4d7-200f35893995",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -152,9 +154,9 @@ namespace HelloDotNet.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("52bc5c9a-95a2-4c8e-aae0-02e157be5800"),
+                            Id = new Guid("20eb6e8b-21c5-4a47-bc05-213be61b6485"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d14cf914-e8c6-4c80-ab08-5ac04c1d4ff7",
+                            ConcurrencyStamp = "aceeb30a-78ab-4fdd-8c44-a8213eca160c",
                             DateOfBirth = new DateTime(1999, 12, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "anhhtchy@gmail.com",
                             EmailConfirmed = true,
@@ -163,7 +165,7 @@ namespace HelloDotNet.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "anhhtchy@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAENWSd+pMH24u+FLRhcY8zRkgpqYZlHibLBIPbzhwosSDAdLw/mYbaHn1XY7fNMH5aw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHjWvWfd7rDlyNg2HJt+9orpNSP2GeSWLioq20Vcjtt4vXoCCq7GYLeiqyHG0E9JYQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -496,50 +498,12 @@ namespace HelloDotNet.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2021, 7, 30, 23, 16, 53, 338, DateTimeKind.Local).AddTicks(6450),
+                            DateCreated = new DateTime(2021, 7, 29, 15, 53, 19, 13, DateTimeKind.Local).AddTicks(9820),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
                             ViewCount = 0
                         });
-                });
-
-            modelBuilder.Entity("HelloDotNet.Data.Entities.ProductImage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Caption")
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<long>("FileSize")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("ImagePath")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<bool>("IsDefault")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("HelloDotNet.Data.Entities.ProductInCategory", b =>
@@ -794,8 +758,8 @@ namespace HelloDotNet.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("52bc5c9a-95a2-4c8e-aae0-02e157be5800"),
-                            RoleId = new Guid("964e0f3d-31c0-434d-8469-d8758ae38fcf")
+                            UserId = new Guid("20eb6e8b-21c5-4a47-bc05-213be61b6485"),
+                            RoleId = new Guid("ef8f6404-3489-4b30-8032-0a3e0407e96b")
                         });
                 });
 
@@ -887,17 +851,6 @@ namespace HelloDotNet.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("HelloDotNet.Data.Entities.ProductImage", b =>
-                {
-                    b.HasOne("HelloDotNet.Data.Entities.Product", "Product")
-                        .WithMany("ProductImages")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("HelloDotNet.Data.Entities.ProductInCategory", b =>
                 {
                     b.HasOne("HelloDotNet.Data.Entities.Category", "Category")
@@ -980,8 +933,6 @@ namespace HelloDotNet.Data.Migrations
                     b.Navigation("Carts");
 
                     b.Navigation("OrderDetails");
-
-                    b.Navigation("ProductImages");
 
                     b.Navigation("ProductInCategories");
 
