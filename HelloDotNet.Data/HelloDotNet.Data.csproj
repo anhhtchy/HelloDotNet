@@ -38,4 +38,7 @@
     <Folder Include="Configurations\" />
     <Folder Include="Extensions\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloDotNet.Utilities\HelloDotNet.Utilities.csproj" />
+  </ItemGroup>
 </Project>
