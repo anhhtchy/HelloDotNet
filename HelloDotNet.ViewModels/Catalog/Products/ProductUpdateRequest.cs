@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 
-namespace HelloDotNet.ViewModels.Catalog.Products.Manage
+namespace HelloDotNet.ViewModels.Catalog.Products
 {
     public class ProductUpdateRequest
     {
@@ -13,6 +13,6 @@ namespace HelloDotNet.ViewModels.Catalog.Products.Manage
         public string SeoTitle { get; set; }
         public string SeoAlias { get; set; }
         public string LanguageId { get; set; }
-        public IFormFile ThumbnailImage { get; set; 
+        public IFormFile ThumbnailImage { get; set; }
     }
 }

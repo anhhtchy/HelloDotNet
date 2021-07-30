@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using HelloDotNet.Utilities.Constants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
@@ -18,7 +19,8 @@ namespace HelloDotNet.Data.EntityFramework
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
-            var connectionString = configuration.GetConnectionString("eShopDb");
+            var connectionString = configuration
+                .GetConnectionString(SystemConstants.DbName);
             var optionsBuilder = new DbContextOptionsBuilder<EShopDbContext>();
             optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 
