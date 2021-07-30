@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using HelloDotNet.Application.DataTransferObjects;
+using HelloDotNet.ViewModels.Common;
 
-namespace HelloDotNet.Application.Catalog.Products.DataTransferObjects.Manage
+namespace HelloDotNet.ViewModels.Catalog.Products.Manage
 {
     public class GetProductPagingRequest : PagingRequestBase
     {

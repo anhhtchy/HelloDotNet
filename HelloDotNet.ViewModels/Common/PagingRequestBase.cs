@@ -1,5 +1,5 @@
 ﻿using System;
-namespace HelloDotNet.Application.DataTransferObjects
+namespace HelloDotNet.ViewModels.Common
 {
     public class PagingRequestBase
     {

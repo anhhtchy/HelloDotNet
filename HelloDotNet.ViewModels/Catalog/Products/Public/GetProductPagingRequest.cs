@@ -1,7 +1,7 @@
 ﻿using System;
-using HelloDotNet.Application.DataTransferObjects;
+using HelloDotNet.ViewModels.Common;
 
-namespace HelloDotNet.Application.Catalog.Products.DataTransferObjects.Public
+namespace HelloDotNet.ViewModels.Catalog.Products.Public
 {
     public class GetProductPagingRequest : PagingRequestBase
     {

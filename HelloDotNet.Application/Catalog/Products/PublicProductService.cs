@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using HelloDotNet.Application.Catalog.Products.DataTransferObjects;
-using HelloDotNet.Application.Catalog.Products.DataTransferObjects.Public;
-using HelloDotNet.Application.DataTransferObjects;
 using HelloDotNet.Data.EntityFramework;
+using HelloDotNet.ViewModels.Catalog.Products;
+using HelloDotNet.ViewModels.Catalog.Products.Public;
+using HelloDotNet.ViewModels.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace HelloDotNet.Application.Catalog.Products

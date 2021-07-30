@@ -1,0 +1,11 @@
+﻿using System;
+namespace HelloDotNet.ViewModels.Catalog.Products
+{
+    public class ProductImageViewModel
+    {
+        public int Id { get; set; }
+        public string FilePath { get; set; }
+        public bool IsDefault { get; set; }
+        public decimal FileSize { get; set; }
+    }
+}

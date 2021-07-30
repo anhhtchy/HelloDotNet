@@ -1,15 +1,20 @@
 ﻿using System;
-namespace HelloDotNet.Application.Catalog.Products.DataTransferObjects.Manage
+using Microsoft.AspNetCore.Http;
+
+namespace HelloDotNet.ViewModels.Catalog.Products.Manage
 {
-    public class ProductUpdateRequest
+    public class ProductCreateRequest
     {
-        public int Id { get; set; }
         public string Name { get; set; }
+        public decimal Price { get; set; }
+        public decimal OriginalPrice { get; set; }
+        public int Stock { get; set; }
         public string Description { get; set; }
         public string Details { get; set; }
         public string SeoDescription { get; set; }
         public string SeoTitle { get; set; }
         public string SeoAlias { get; set; }
         public string LanguageId { get; set; }
+        public IFormFile ThumbnailImage { get; set; }
     }
 }

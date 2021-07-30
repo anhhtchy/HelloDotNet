@@ -5,23 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+      <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Catalog\" />
     <None Remove="Catalog\Products\" />
-    <None Remove="Catalog\Products\DataTransferObjects\" />
-    <None Remove="DataTransferObjects\" />
-    <None Remove="Catalog\Products\DataTransferObjects\Manage\" />
-    <None Remove="Catalog\Products\DataTransferObjects\Public\" />
+    <None Remove="Microsoft.AspNetCore.Http.Features" />
+    <None Remove="Common\" />
+    <None Remove="Microsoft.Extensions.Hosting" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Catalog\" />
     <Folder Include="Catalog\Products\" />
-    <Folder Include="Catalog\Products\DataTransferObjects\" />
-    <Folder Include="DataTransferObjects\" />
-    <Folder Include="Catalog\Products\DataTransferObjects\Manage\" />
-    <Folder Include="Catalog\Products\DataTransferObjects\Public\" />
+    <Folder Include="Common\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloDotNet.Data\HelloDotNet.Data.csproj" />
     <ProjectReference Include="..\HelloDotNet.Utilities\HelloDotNet.Utilities.csproj" />
+    <ProjectReference Include="..\HelloDotNet.ViewModels\HelloDotNet.ViewModels.csproj" />
   </ItemGroup>
 </Project>

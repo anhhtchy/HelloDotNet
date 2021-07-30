@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace HelloDotNet.Application.DataTransferObjects
+namespace HelloDotNet.ViewModels.Common
 {
     public class PagedResult<T>
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using HelloDotNet.Application.Catalog.Products.DataTransferObjects;
-using HelloDotNet.Application.Catalog.Products.DataTransferObjects.Public;
-using HelloDotNet.Application.DataTransferObjects;
+using HelloDotNet.ViewModels.Catalog.Products;
+using HelloDotNet.ViewModels.Catalog.Products.Public;
+using HelloDotNet.ViewModels.Common;
 
 namespace HelloDotNet.Application.Catalog.Products
 {
