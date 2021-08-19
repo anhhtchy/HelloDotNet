@@ -61,7 +61,7 @@ namespace HelloDotNet.Application.Catalog.Products
                         Description = request.Description,
                         Details = request.Details,
                         SeoAlias = request.SeoAlias,
-                        SeoDescription = request.Description,
+                        SeoDescription = request.SeoDescription,
                         SeoTitle = request.SeoTitle,
                         LanguageId = request.LanguageId
                     }
@@ -83,7 +83,8 @@ namespace HelloDotNet.Application.Catalog.Products
                 };
             }
             _context.Products.Add(product);
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            return product.Id;
         }
 
         public async Task<int> Delete(int productId)
@@ -240,6 +241,39 @@ namespace HelloDotNet.Application.Catalog.Products
         Task<List<ProductImageViewModel>> IManageProductService.GetListImage(int productId)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<ProductViewModel> GetById(int productId,
+            string languageId)
+        {
+            var product = await _context.Products.FindAsync(productId);
+            var productTranslation = await _context.ProductTranslations
+                .FirstOrDefaultAsync(
+                x => x.ProductId == productId && x.LanguageId == languageId);
+            var productViewModel = new ProductViewModel()
+            {
+                Id = product.Id,
+                DateCreated = product.DateCreated,
+                Description = productTranslation != null
+                    ? productTranslation.Description : null,
+                LanguageId = productTranslation.LanguageId,
+                Details = productTranslation != null
+                    ? productTranslation.Details : null,
+                Name = productTranslation != null
+                    ? productTranslation.Name : null,
+                Price = product.Price,
+                OriginalPrice = product.OriginalPrice,
+                SeoAlias = productTranslation != null
+                    ? productTranslation.SeoAlias : null,
+                SeoDescription = productTranslation != null
+                    ? productTranslation.SeoDescription : null,
+                SeoTitle = productTranslation != null
+                    ? productTranslation.SeoTitle : null,
+                Stock = product.Stock,
+                ViewCount = product.ViewCount
+            };
+
+            return productViewModel;
         }
     }
 }
