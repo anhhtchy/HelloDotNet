@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HelloDotNet.Application.Catalog.Products;
+using HelloDotNet.Application.Common;
 using HelloDotNet.Data.EntityFramework;
 using HelloDotNet.Utilities.Constants;
 using Microsoft.AspNetCore.Builder;
@@ -37,7 +38,11 @@ namespace HelloDotNet.BackendApi
                     ServerVersion.AutoDetect(connectionString)));
 
             services
+                .AddTransient<IStorageService, FileStorageService>();
+            services
                 .AddTransient<IPublicProductService, PublicProductService>();
+            services
+                .AddTransient<IManageProductService, ManageProductService>();
 
             services.AddControllers();
 
