@@ -13,15 +13,25 @@
     <None Remove="Microsoft.AspNetCore.Http.Features" />
     <None Remove="Common\" />
     <None Remove="Microsoft.Extensions.Hosting" />
+    <None Remove="System\" />
+    <None Remove="System\Users\" />
+    <None Remove="Microsoft.IdentityModel.Tokens" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Catalog\" />
     <Folder Include="Catalog\Products\" />
     <Folder Include="Common\" />
+    <Folder Include="System\" />
+    <Folder Include="System\Users\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloDotNet.Data\HelloDotNet.Data.csproj" />
     <ProjectReference Include="..\HelloDotNet.Utilities\HelloDotNet.Utilities.csproj" />
     <ProjectReference Include="..\HelloDotNet.ViewModels\HelloDotNet.ViewModels.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.12.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.12.2" />
   </ItemGroup>
 </Project>
