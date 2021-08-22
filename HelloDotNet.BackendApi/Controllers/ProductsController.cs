@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using HelloDotNet.Application.Catalog.Products;
 using HelloDotNet.ViewModels.Catalog.ProductImages;
 using HelloDotNet.ViewModels.Catalog.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace HelloDotNet.BackendApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly IPublicProductService _publicProductService;
