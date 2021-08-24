@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using HelloDotNet.Application.Catalog.Products;
 using HelloDotNet.Application.Common;
 using HelloDotNet.Application.System.Users;
 using HelloDotNet.Data.Entities;
 using HelloDotNet.Data.EntityFramework;
 using HelloDotNet.Utilities.Constants;
+using HelloDotNet.ViewModels.System.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -58,7 +61,14 @@ namespace HelloDotNet.BackendApi
                 .AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
             services
                 .AddTransient<IUserService, UserService>();
-            services.AddControllers();
+            //services.AddTransient<IValidator<LoginRequest>,
+            //    LoginRequestValidator>();
+            //services.AddTransient<IValidator<RegisterRequest>,
+            //    RegisterRequestValidator>();
+
+            services.AddControllers().AddFluentValidation(
+                fv => fv.RegisterValidatorsFromAssemblyContaining
+                    <LoginRequestValidator>());
 
             services.AddSwaggerGen(c =>
             {
